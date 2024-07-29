@@ -1,0 +1,228 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "get_current_weather",
+            "description": "Get the current weather in a given location",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The city and state, e.g. San Francisco, CA"
+                    },
+                    "unit": {
+                        "type": "string",
+                        "enum": ["celsius", "fahrenheit"]
+                    }
+                },
+                "required": ["location"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "search_web",
+            "description": "Perform a web search for the given query",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "The search query"
+                    },
+                    "num_results": {
+                        "type": "integer",
+                        "description": "Number of results to return"
+                    }
+                },
+                "required": ["query"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_news_headlines",
+            "description": "Retrieve the latest news headlines based on a topic",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "topic": {
+                        "type": "string",
+                        "description": "The news topic"
+                    },
+                    "language": {
+                        "type": "string",
+                        "description": "The language for the news",
+                        "enum": ["en", "es", "fr", "de", "it", "pt"]
+                    }
+                },
+                "required": ["topic"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_stock_price",
+            "description": "Get the current stock price for a given ticker symbol",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "ticker_symbol": {
+                        "type": "string",
+                        "description": "Ticker symbol of the stock"
+                    }
+                },
+                "required": ["ticker_symbol"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "visual_search",
+            "description": "Perform a visual search based on an image or description",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "image_url": {
+                        "type": "string",
+                        "description": "URL of the image to search for"
+                    },
+                    "text_description": {
+                        "type": "string",
+                        "description": "Textual description of the image to search for"
+                    },
+                    "search_type": {
+                        "type": "string",
+                        "enum": ["similar_images", "products", "information"],
+                        "description": "Type of visual search to perform"
+                    }
+                },
+                "required": ["search_type"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "read_github_repo",
+            "description": "Retrieve information from a GitHub repository",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "repo_owner": {
+                        "type": "string",
+                        "description": "Owner of the repository"
+                    },
+                    "repo_name": {
+                        "type": "string",
+                        "description": "Name of the repository"
+                    },
+                    "file_path": {
+                        "type": "string",
+                        "description": "Path to the file within the repository (optional)"
+                    }
+                },
+                "required": ["repo_owner", "repo_name"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "read_stack_overflow",
+            "description": "Retrieve answers from Stack Overflow based on a query",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "type": "string",
+                        "description": "Search query for Stack Overflow"
+                    },
+                    "num_answers": {
+                        "type": "integer",
+                        "description": "Number of answers to retrieve"
+                    }
+                },
+                "required": ["query"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "extract_youtube_script",
+            "description": "Extract the script or transcript from a YouTube video",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "video_url": {
+                        "type": "string",
+                        "description": "URL of the YouTube video"
+                    }
+                },
+                "required": ["video_url"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "read_medium_article",
+            "description": "Retrieve and analyze content from a Medium article",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "article_url": {
+                        "type": "string",
+                        "description": "URL of the Medium article"
+                    }
+                },
+                "required": ["article_url"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "find_framework",
+            "description": "Identify the frameworks needed based on a programming task",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "task_description": {
+                        "type": "string",
+                        "description": "Description of the programming task"
+                    }
+                },
+                "required": ["task_description"]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "read_framework_docs",
+            "description": "Retrieve and analyze documentation of a specified framework",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "framework_name": {
+                        "type": "string",
+                        "description": "Name of the framework"
+                    },
+                    "doc_type": {
+                        "type": "string",
+                        "enum": ["api_reference", "tutorials", "guides"],
+                        "description": "Type of documentation to retrieve"
+                    }
+                },
+                "required": ["framework_name", "doc_type"]
+            }
+        }
+    }
+]
